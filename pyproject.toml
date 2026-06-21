@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rootsentry"
+version = "0.1.0"
+description = "Mobile runtime-integrity detection: root/jailbreak/emulator/hook/tamper indicators with a scored posture verdict."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "COCL-1.0" }
+authors = [{ name = "Cognis Digital", email = "dev@cognis.digital" }]
+keywords = ["mobile-security", "root-detection", "jailbreak-detection", "android", "ios", "anti-tampering", "frida-detection", "rasp"]
+classifiers = [
+  "Intended Audience :: Information Technology",
+  "Topic :: Security",
+  "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+rootsentry = "rootsentry.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["rootsentry"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

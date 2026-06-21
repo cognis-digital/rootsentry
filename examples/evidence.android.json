@@ -1,0 +1,12 @@
+{
+  "platform": "android",
+  "present_files": ["/system/xbin/su", "/system/xbin/busybox", "/data/local/tmp/frida-server"],
+  "installed_packages": ["com.topjohnwu.magisk", "com.acme.app"],
+  "system_props": {
+    "ro.build.tags": "test-keys",
+    "ro.debuggable": "1",
+    "ro.hardware": "qcom"
+  },
+  "open_ports": [27042],
+  "runtime_flags": []
+}
