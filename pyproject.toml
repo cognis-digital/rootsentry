@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rootsentry"
-version = "0.1.0"
+version = "0.2.0"
 description = "Mobile runtime-integrity detection: root/jailbreak/emulator/hook/tamper indicators with a scored posture verdict."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,6 +26,7 @@ rootsentry = "rootsentry.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["rootsentry"]
+include = ["rootsentry/*.py", "rootsentry/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

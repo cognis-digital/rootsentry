@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="860" height="360" fill="#0f1419"/>
+  <text x="430" y="34" fill="#e6edf3" font-size="20" font-weight="700" text-anchor="middle">rootsentry fleet analysis pipeline</text>
+
+  <!-- devices -->
+  <rect x="24" y="74" width="150" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+  <text x="99" y="98" fill="#7ee787" font-size="13" font-weight="600" text-anchor="middle">device fleet</text>
+  <rect x="40" y="112" width="118" height="26" rx="4" fill="#21262d"/><text x="99" y="130" fill="#c9d1d9" font-size="11" text-anchor="middle">snapshot 1</text>
+  <rect x="40" y="146" width="118" height="26" rx="4" fill="#21262d"/><text x="99" y="164" fill="#c9d1d9" font-size="11" text-anchor="middle">snapshot 2</text>
+  <rect x="40" y="180" width="118" height="26" rx="4" fill="#21262d"/><text x="99" y="198" fill="#c9d1d9" font-size="11" text-anchor="middle">snapshot 3</text>
+  <text x="99" y="232" fill="#8b949e" font-size="11" text-anchor="middle">…</text>
+  <rect x="40" y="244" width="118" height="26" rx="4" fill="#21262d"/><text x="99" y="262" fill="#c9d1d9" font-size="11" text-anchor="middle">snapshot N</text>
+
+  <!-- engine -->
+  <rect x="232" y="120" width="150" height="118" rx="8" fill="#161b22" stroke="#1f6feb"/>
+  <text x="307" y="146" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">engine.evaluate</text>
+  <text x="307" y="170" fill="#c9d1d9" font-size="11" text-anchor="middle">match catalog</text>
+  <text x="307" y="188" fill="#c9d1d9" font-size="11" text-anchor="middle">saturating score</text>
+  <text x="307" y="206" fill="#c9d1d9" font-size="11" text-anchor="middle">posture verdict</text>
+  <text x="307" y="224" fill="#c9d1d9" font-size="11" text-anchor="middle">+ ATT&#38;CK map</text>
+
+  <!-- fleet -->
+  <rect x="440" y="74" width="170" height="212" rx="8" fill="#161b22" stroke="#d29922"/>
+  <text x="525" y="98" fill="#e3b341" font-size="13" font-weight="600" text-anchor="middle">fleet.analyze</text>
+  <text x="525" y="124" fill="#c9d1d9" font-size="11" text-anchor="middle">posture distribution</text>
+  <text x="525" y="148" fill="#c9d1d9" font-size="11" text-anchor="middle">co-occurrence + lift</text>
+  <text x="525" y="172" fill="#c9d1d9" font-size="11" text-anchor="middle">attacker profiles</text>
+  <text x="525" y="196" fill="#c9d1d9" font-size="11" text-anchor="middle">technique rollup</text>
+  <text x="525" y="220" fill="#c9d1d9" font-size="11" text-anchor="middle">outlier ranking</text>
+  <text x="525" y="252" fill="#8b949e" font-size="10" text-anchor="middle">pure stdlib · offline</text>
+
+  <!-- actions -->
+  <rect x="668" y="100" width="168" height="160" rx="8" fill="#161b22" stroke="#f85149"/>
+  <text x="752" y="124" fill="#ff7b72" font-size="13" font-weight="600" text-anchor="middle">response</text>
+  <text x="752" y="150" fill="#c9d1d9" font-size="11" text-anchor="middle">CI/attestation gate</text>
+  <text x="752" y="174" fill="#c9d1d9" font-size="11" text-anchor="middle">--fail-rate</text>
+  <text x="752" y="198" fill="#c9d1d9" font-size="11" text-anchor="middle">triage by profile</text>
+  <text x="752" y="222" fill="#c9d1d9" font-size="11" text-anchor="middle">SIEM / JSON export</text>
+
+  <!-- arrows -->
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8b949e"/></marker></defs>
+  <line x1="174" y1="179" x2="230" y2="179" stroke="#8b949e" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="382" y1="179" x2="438" y2="179" stroke="#8b949e" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="610" y1="179" x2="666" y2="179" stroke="#8b949e" stroke-width="2" marker-end="url(#a)"/>
+
+  <text x="430" y="330" fill="#6e7681" font-size="11" text-anchor="middle">Defensive runtime-integrity analytics — detection &#38; analysis only. Diagram: Cognis Digital (original work, public domain).</text>
+</svg>

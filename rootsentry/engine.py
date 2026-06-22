@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from enum import IntEnum
 
 from .catalog import (
-    Signal, Platform, CATALOG, for_platform,
+    Signal, Platform, Category, CATALOG, for_platform, ATTACK_NAMES,
     FILE, PACKAGE, PROP, PORT, FLAG,
 )
 
@@ -57,13 +57,33 @@ class Verdict:
     score: int
     fired: list[Signal]
 
+    @property
+    def categories(self) -> dict:
+        """Map of fired Category -> count (e.g. {'root': 2, 'hook': 1})."""
+        out: dict = {}
+        for s in self.fired:
+            out[s.category.value] = out.get(s.category.value, 0) + 1
+        return out
+
+    @property
+    def techniques(self) -> list[str]:
+        """Sorted, de-duplicated ATT&CK for Mobile technique ids that fired."""
+        seen: set = set()
+        for s in self.fired:
+            seen.update(s.attack)
+        return sorted(seen)
+
     def to_dict(self) -> dict:
         return {
             "posture": self.posture.label,
             "score": self.score,
+            "categories": self.categories,
+            "techniques": [
+                {"id": t, "name": ATTACK_NAMES.get(t, "")} for t in self.techniques
+            ],
             "fired": [
                 {"id": s.id, "category": s.category.value, "weight": s.weight,
-                 "description": s.description}
+                 "description": s.description, "attack": list(s.attack)}
                 for s in self.fired
             ],
         }

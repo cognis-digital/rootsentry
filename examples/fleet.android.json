@@ -1,0 +1,51 @@
+{
+  "_comment": "Synthetic fleet of device telemetry snapshots for `rootsentry fleet`. All values are clearly-synthetic test data, not collected from real devices.",
+  "devices": [
+    {"device_id": "clean-01", "platform": "android", "system_props": {"ro.build.tags": "release-keys", "ro.secure": "1"}},
+    {"device_id": "clean-02", "platform": "android", "system_props": {"ro.build.tags": "release-keys", "ro.secure": "1"}},
+    {"device_id": "clean-03", "platform": "ios", "present_files": []},
+    {"device_id": "clean-04", "platform": "android", "system_props": {"ro.build.tags": "release-keys"}},
+
+    {"device_id": "instr-01", "platform": "android",
+     "present_files": ["/system/xbin/su", "/data/local/tmp/frida-server", "/sbin/.magisk"],
+     "installed_packages": ["com.topjohnwu.magisk"],
+     "open_ports": [27042]},
+    {"device_id": "instr-02", "platform": "android",
+     "present_files": ["/system/bin/su", "/data/local/tmp/libfrida-gadget.so"],
+     "installed_packages": ["com.topjohnwu.magisk", "org.lsposed.manager"],
+     "runtime_flags": ["frida_in_memory_maps", "tracerpid_nonzero"]},
+    {"device_id": "instr-03", "platform": "ios",
+     "present_files": ["/Applications/Cydia.app", "/bin/bash", "/Library/MobileSubstrate/MobileSubstrate.dylib"],
+     "open_ports": [27042],
+     "runtime_flags": ["can_write_outside_sandbox"]},
+
+    {"device_id": "emu-farm-01", "platform": "android",
+     "system_props": {"ro.hardware": "goldfish", "ro.product.model": "sdk_gphone", "ro.kernel.qemu": "1"},
+     "present_files": ["/dev/qemu_pipe"]},
+    {"device_id": "emu-farm-02", "platform": "android",
+     "system_props": {"ro.hardware": "ranchu", "ro.product.model": "sdk_gphone", "ro.kernel.qemu": "1"},
+     "present_files": ["/dev/qemu_pipe"]},
+    {"device_id": "emu-farm-03", "platform": "android",
+     "system_props": {"ro.hardware": "goldfish", "ro.product.model": "sdk", "ro.kernel.qemu": "1"},
+     "present_files": ["/dev/socket/genyd"]},
+
+    {"device_id": "repack-01", "platform": "android",
+     "runtime_flags": ["signature_mismatch", "integrity_check_failed", "packer_detected"]},
+    {"device_id": "repack-02", "platform": "ios",
+     "runtime_flags": ["signature_mismatch"]},
+
+    {"device_id": "evasive-01", "platform": "android",
+     "installed_packages": ["io.github.huskydg.magisk"],
+     "present_files": ["/sbin/.magisk"],
+     "system_props": {"ro.boot.selinux": "permissive", "ro.boot.verifiedbootstate": "orange"}},
+
+    {"device_id": "mitm-01", "platform": "android",
+     "present_files": ["/system/xbin/su"],
+     "installed_packages": ["com.topjohnwu.magisk"],
+     "runtime_flags": ["user_ca_installed", "system_proxy_active", "debugger_attached"]},
+
+    {"device_id": "borderline-01", "platform": "android",
+     "present_files": ["/system/xbin/busybox"],
+     "system_props": {"ro.debuggable": "1", "ro.build.tags": "test-keys", "ro.boot.flash.locked": "0"}}
+  ]
+}

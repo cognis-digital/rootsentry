@@ -43,11 +43,51 @@ rootsentry eval evidence.json
 #   [ 8] hook      android.frida.port — frida-server default control port open
 #   ...
 
+# Each fired indicator now carries its MITRE ATT&CK for Mobile technique(s)
+# and the verdict names any recognized attacker profile:
+#   ATT&CK: T1404 Exploitation for Privilege Escalation, T1617 Hooking, ...
+#   PROFILE [critical] Rooted device running an instrumentation framework
+
 # Gate a backend attestation check (exit 1 at/above threshold)
 rootsentry eval evidence.json --fail-on COMPROMISED
 
+# Fleet / cohort analysis: posture distribution, indicator co-occurrence (with
+# lift), attacker profiles, ATT&CK rollup, and outliers over a batch of devices
+rootsentry fleet examples/fleet.android.json
+rootsentry fleet fleet.json --json --devices > fleet.json   # SIEM-ready
+rootsentry fleet canary.json --fail-rate 0.2                 # CI/canary gate
+
+# ATT&CK technique -> indicator crosswalk
+rootsentry attack
+
 # Inspect the indicator catalog
 rootsentry catalog --platform ios
+```
+
+### Fleet analysis (the big new capability)
+
+A single verdict trusts one device; a **fleet** report finds campaigns. When you
+operate an attestation backend at scale, `rootsentry fleet` ingests a batch of
+snapshots and surfaces the population-level signal:
+
+- **Posture distribution** and a single `compromised-rate` you can trend or gate.
+- **Indicator co-occurrence with lift** — attacker toolkits leave *correlated*
+  fingerprints, and correlation is far harder to spoof than any one check.
+- **Attacker profiles** (`dynamic_instrumentation`, `rooted_and_hooked`,
+  `emulator_farm`, `repackaged_app`, `mitm_analysis`, `evasive_root`) so triage
+  is templated, not per-device.
+- **Outliers** — devices with many low-weight oddities a per-rule threshold
+  under-rates.
+
+Full walkthrough, frank threat/defensive context, and the ATT&CK mapping live in
+[`docs/FLEET_ANALYSIS.md`](docs/FLEET_ANALYSIS.md).
+
+```python
+from rootsentry import analyze_fleet, classify_profiles, evaluate, Evidence, Platform
+
+report = analyze_fleet(list_of_snapshot_dicts)
+print(report.compromised_rate, report.profile_counts)
+print(report.cooccurrence[:5])            # [(idA, idB, count, lift), ...]
 ```
 
 ### As a library
@@ -70,12 +110,31 @@ collect on-device, attest + send to your backend (inside Play Integrity /
 DeviceCheck where possible), and evaluate server-side so the decision isn't made
 solely in an environment the attacker controls.
 
+## Offline / air-gap feeds
+
+The bundled `datafeeds.py` + `data_feeds_2026.json` ship a keyless, cache-first
+ingester. rootsentry wires the **MITRE ATT&CK for Mobile** feed (`attack-mobile`)
+so an air-gapped deployment can refresh the technique catalog over sneakernet:
+
+```python
+from rootsentry import datafeeds
+bundle = datafeeds.get("attack-mobile", offline=True)   # serves the local cache
+```
+
+All tests stay offline via a committed STIX fixture; the network is never
+touched during `pytest`.
+
 ## Indicator coverage
 
-Root (su, Magisk, SuperSU, busybox, test-keys, ro.secure), emulator
-(goldfish/ranchu/qemu), hooking (frida-server, Xposed, Substrate), iOS jailbreak
-(Cydia, Sileo, bash/apt, sandbox-escape, fork), and cross-platform tamper
-(signature mismatch, integrity failure, attached debugger).
+Root (su across system/vendor/sbin, Magisk + renamed/repackaged Magisk, SuperSU,
+KingRoot, busybox, test-keys, ro.secure, permissive SELinux, unlocked verified
+boot), emulator (goldfish/ranchu/qemu, Genymotion, qemu_pipe), hooking
+(frida-server/gadget + in-memory maps, Xposed/LSPosed, Substrate, ptrace
+TracerPid), iOS jailbreak (Cydia, Sileo, Zebra, bash/sh, apt, rootless
+`/var/jb` jailbreakd, sandbox-escape, fork, DYLD_INSERT_LIBRARIES, Substitute),
+and cross-platform tamper (signature mismatch, integrity failure, packer,
+user-CA, system proxy, attached debugger). Every indicator is annotated with its
+MITRE ATT&CK for Mobile technique.
 
 ## Scope of use
 

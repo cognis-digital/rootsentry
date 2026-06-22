@@ -1,0 +1,12 @@
+{
+  "type": "bundle",
+  "spec_version": "2.1",
+  "objects": [
+    {"type": "attack-pattern", "name": "Hooking",
+     "external_references": [{"source_name": "mitre-mobile-attack", "external_id": "T1617"}]},
+    {"type": "attack-pattern", "name": "Exploitation for Privilege Escalation",
+     "external_references": [{"source_name": "mitre-mobile-attack", "external_id": "T1404"}]},
+    {"type": "attack-pattern", "name": "Process Injection",
+     "external_references": [{"source_name": "mitre-mobile-attack", "external_id": "T1631"}]}
+  ]
+}
