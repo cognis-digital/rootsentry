@@ -13,6 +13,64 @@ Pure standard library, zero dependencies. Defensive by design: the point is for
 *your* app to recognize a rooted/jailbroken/instrumented runtime and react —
 degrade gracefully, warn, or refuse high-risk actions.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ rootsentry --help
+usage: rootsentry [-h] [--version] {eval,fleet,catalog,attack} ...
+
+rootsentry CLI.
+
+positional arguments:
+  {eval,fleet,catalog,attack}
+    eval                evaluate a device evidence snapshot
+    fleet               analyze a batch of device snapshots
+    catalog             list indicator catalog
+    attack              show ATT&CK technique -> signal mapping
+
+options:
+  -h, --help            show this help message and exit
+  --version
+```
+
+```console
+$ rootsentry catalog
+android.su.system_xbin           android root      w9 — su binary present in /system/xbin (classic root)
+android.su.system_bin            android root      w9 — su binary present in /system/bin
+android.su.sbin                  android root      w9 — su binary present in /sbin
+android.su.vendor                android root      w9 — su binary present in /vendor/bin
+android.magisk.pkg               android root      w9 — Magisk manager installed
+android.magisk.repackaged        android root      w9 — Repackaged/renamed Magisk (stub-rename to evade detection)
+android.magisk.path              android root      w9 — Magisk runtime directory present
+android.superuser.pkg            android root      w8 — SuperSU installed
+android.kingroot.pkg             android root      w8 — KingRoot/KingUser one-click root installed
+android.busybox                  android root      w6 — busybox present (common on rooted devices)
+android.build.testkeys           android root      w7 — Build signed with test-keys rather than release-keys
+android.ro.debuggable            android debugger  w6 — System build is debuggable (ro.debuggable=1)
+android.ro.secure                android root      w7 — Non-secure system build (ro.secure=0)
+android.selinux.permissive       android root      w7 — SELinux forced permissive (enforcement disabled)
+android.bootloader.unlocked      android tamper    w7 — Verified-boot state not green (unlocked/tampered bootloader)
+android.flash.locked_no          android tamper    w6 — Flash partition unlocked (ro.boot.flash.locked=0)
+android.emu.goldfish             android emulator  w5 — Emulator hardware (goldfish/ranchu)
+android.emu.ranchu               android emulator  w5 — Emulator hardware (ranchu)
+android.emu.generic              android emulator  w4 — Generic/emulator product model
+android.emu.qemu                 android emulator  w6 — QEMU kernel flag set
+android.emu.genymotion           android emulator  w6 — Genymotion emulator control socket present
+android.emu.qemu_pipe            android emulator  w6 — QEMU pipe device present (emulator)
+android.frida.port               android hook      w8 — frida-server default control port open
+android.frida.lib                android hook      w8 — frida-server binary staged in /data/local/tmp
+android.frida.gadget             android hook      w8 — frida-gadget injectable library staged
+android.frida.maps     
+```
+
+> Blocks above are real `rootsentry` output — reproduce them from a clone.
+
+<!-- cognis:example:end -->
+
 ## How it works
 
 ```

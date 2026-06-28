@@ -1,0 +1,16 @@
+$ rootsentry --help
+
+usage: rootsentry [-h] [--version] {eval,fleet,catalog,attack} ...
+
+rootsentry CLI.
+
+positional arguments:
+  {eval,fleet,catalog,attack}
+    eval                evaluate a device evidence snapshot
+    fleet               analyze a batch of device snapshots
+    catalog             list indicator catalog
+    attack              show ATT&CK technique -> signal mapping
+
+options:
+  -h, --help            show this help message and exit
+  --version
