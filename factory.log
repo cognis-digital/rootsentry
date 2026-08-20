@@ -1,0 +1,24 @@
+[2026-08-20 05:52:18] === enhance · rootsentry · words=120000 loc>=10000 langs=9 push=True ===
+[2026-08-20 05:52:24] phase DOCS — longform 120000-word corpus -> docs/corpus/
+[2026-08-20 13:46:19] phase POLYGLOT — expanding to >= 10000 LOC across 9 languages
+[2026-08-20 13:54:37]   facets: ['root_jailbreak_detector', 'emulator_avd_spoof_detector', 'hook_injection_scanner', 'tamper_mod_apk_validator', 'posture_score_aggregator', 'core_introspection_utils']
+[2026-08-20 13:59:32]   +polyglot/python/root_jailbreak_detector.py  (loc now ~2483)
+[2026-08-20 14:03:20]   +polyglot/go/root_jailbreak_detector.go  (loc now ~2905)
+[2026-08-20 14:07:09]   +polyglot/rust/root_jailbreak_detector.rs  (loc now ~3393)
+[2026-08-20 14:12:05]   +polyglot/typescript/root_jailbreak_detector.ts  (loc now ~3867)
+[2026-08-20 14:15:51]   +polyglot/c/root_jailbreak_detector.c  (loc now ~4277)
+[2026-08-20 14:19:25]   +polyglot/cpp/root_jailbreak_detector.cpp  (loc now ~4725)
+[2026-08-20 14:23:35]   +polyglot/java/root_jailbreak_detector.java  (loc now ~5080)
+[2026-08-20 14:26:16]   +polyglot/ruby/root_jailbreak_detector.rb  (loc now ~5412)
+[2026-08-20 14:31:21]   +polyglot/csharp/root_jailbreak_detector.cs  (loc now ~5824)
+[2026-08-20 14:34:16]   +polyglot/python/emulator_avd_spoof_detector.py  (loc now ~6137)
+[2026-08-20 14:39:41]   +polyglot/go/emulator_avd_spoof_detector.go  (loc now ~6570)
+[2026-08-20 14:41:48]   +polyglot/rust/emulator_avd_spoof_detector.rs  (loc now ~6984)
+[2026-08-20 14:43:54]   +polyglot/typescript/emulator_avd_spoof_detector.ts  (loc now ~7475)
+[2026-08-20 14:45:09]   +polyglot/c/emulator_avd_spoof_detector.c  (loc now ~7762)
+[2026-08-20 14:48:16]   +polyglot/cpp/emulator_avd_spoof_detector.cpp  (loc now ~8181)
+[2026-08-20 14:50:11]   +polyglot/java/emulator_avd_spoof_detector.java  (loc now ~8698)
+[2026-08-20 14:51:20]   +polyglot/ruby/emulator_avd_spoof_detector.rb  (loc now ~8969)
+[2026-08-20 14:53:35]   +polyglot/csharp/emulator_avd_spoof_detector.cs  (loc now ~9411)
+[2026-08-20 14:55:31]   +polyglot/python/hook_injection_scanner.py  (loc now ~9857)
+[2026-08-20 14:58:42]   +polyglot/go/hook_injection_scanner.go  (loc now ~10550)
