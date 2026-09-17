@@ -101,3 +101,106 @@
 [2026-08-20 13:46:16]   [14] Frontier Applications and Future Directions — 5809w
 [2026-08-20 13:46:19] ASSEMBLED -> C:\Users\user\cognis-enhance\rootsentry\docs\corpus\rootsentry-engineering-compendium-reference\rootsentry-engineering-compendium-reference.md (82,242 words, 14 sections)
 [2026-08-20 13:46:19] === complete · 82,242 words -> C:\Users\user\cognis-enhance\rootsentry\docs\corpus\rootsentry-engineering-compendium-reference\rootsentry-engineering-compendium-reference.md ===
+[2026-09-16 22:31:13] === longform corpus · "rootsentry — Engineering Compendium & Reference" · target ~120,000w · 14 sections × 6 subs × ~1450w · slot=uncensored · web=off ===
+[2026-09-16 22:31:18] hw: free~8.9GB target~9.5GB evicted=[]
+[2026-09-16 22:32:07] outline: 14 sections
+[2026-09-16 22:37:30]     · Mobile Execution Environments and Their Securi (987w)
+[2026-09-16 22:41:31]     · Runtime Code Injection and Hooking Mechanisms (815w)
+[2026-09-16 22:45:08]     · Emulator and Virtualization Detection Techniqu (784w)
+[2026-09-16 22:48:27]     · Root and Jailbreak Indicators: System-Level Si (737w)
+[2026-09-16 22:52:40]     · Tamper Detection through Memory and Process An (912w)
+[2026-09-16 22:57:53]     · Posture Scoring Frameworks for Mobile Runtime  (1135w)
+[2026-09-16 22:57:53]   [01] Foundations of Mobile Runtime Integrity — 5421w
+[2026-09-16 23:02:02]     · System Property Verification (839w)
+[2026-09-16 23:06:21]     · Binary Signature Integrity Checks (982w)
+[2026-09-16 23:09:57]     · Process and Filesystem Anomaly Analysis (777w)
+[2026-09-16 23:14:13]     · Kernel Module Inspection Techniques (943w)
+[2026-09-16 23:18:58]     · Virtualization Layer Detection Strategies (980w)
+[2026-09-16 23:25:01]     · Runtime Hook and Emulator Signature Identifica (1376w)
+[2026-09-16 23:25:01]   [02] Root and Jailbreak Detection Mechanisms — 5936w
+[2026-09-16 23:29:47]     · CPUID and Microcode Signature Analysis (996w)
+[2026-09-16 23:33:58]     · Framebuffer and Graphics Acceleration Behavior (874w)
+[2026-09-16 23:38:48]     · Virtualized Input/Output Device Signatures (1045w)
+[2026-09-16 23:42:31]     · Network Stack Anomalies in Emulated Environmen (803w)
+[2026-09-16 23:46:04]     · Audio and Sensor Emulation Fingerprinting (807w)
+[2026-09-16 23:52:27]     · Memory Mapping and Page Table Pattern Recognit (1438w)
+[2026-09-16 23:52:27]   [03] Emulator Identification Techniques — 6006w
+[2026-09-16 23:57:11]     · Dynamic Instrumentation Techniques in Hook Det (941w)
+[2026-09-17 00:01:44]     · Memory Mapping Anomalies and Library Injection (1046w)
+[2026-09-17 00:11:07]     · Runtime Symbol Resolution and Hooked Function  (2075w)
+[2026-09-17 00:15:53]     · System Call Interception Patterns and Hooking  (1032w)
+[2026-09-17 00:21:56]     · Native Code Signature Verification and Hooked  (1336w)
+[2026-09-17 00:25:50]     · Behavioral Profiling of Hooked Processes and R (905w)
+[2026-09-17 00:25:50]   [04] Hooking and Code Injection Analysis — 7392w
+[2026-09-17 00:32:45]     · Memory Address Space Integrity Verification (1442w)
+[2026-09-17 00:40:10]     · Runtime Library Signature Validation (1553w)
+[2026-09-17 00:44:37]     · System Call Interception Pattern Analysis (930w)
+[2026-09-17 00:49:10]     · Process Tree Anomaly Detection (969w)
+[2026-09-17 00:54:03]     · Dynamic Code Execution Signature Matching (1081w)
+[2026-09-17 00:57:25]     · Kernel Module Integrity Check via Syscall Trac (761w)
+[2026-09-17 00:57:25]   [05] Tamper Indicators and Runtime Checks — 6779w
+[2026-09-17 01:02:44]     · Kernel Boot Parameters and Secure Boot Validat (1117w)
+[2026-09-17 01:06:49]     · System Property Table (sprop) Integrity Checks (884w)
+[2026-09-17 01:11:04]     · Device Tree Blob (DTB) Signature Verification (933w)
+[2026-09-17 01:16:54]     · Build ID and Version Hash Consistency Analysis (1021w)
+[2026-09-17 01:26:29]     · SELinux/AppArmor Policy Enforcement Inspection (1999w)
+[2026-09-17 01:32:59]     · Persistent Storage Metadata and Filesystem Int (1287w)
+[2026-09-17 01:32:59]   [06] System Property Analysis for Integrity Verificatio — 7292w
+[2026-09-17 01:39:00]     · Process Tree Anomaly Detection (1100w)
+[2026-09-17 01:45:25]     · Thread Priority and Scheduling Analysis (1057w)
+[2026-09-17 01:55:06]     · Memory Mapping and Shared Library Verification (1712w)
+[2026-09-17 02:03:29]     · Signal Handling and Inter-Process Communicatio (1570w)
+[2026-09-17 02:07:48]     · Thread Local Storage (TLS) Integrity Checks (813w)
+[2026-09-17 02:13:36]     · System Call Behavior and Context Switching Mon (1084w)
+[2026-09-17 02:13:36]   [07] Process and Thread State Inspection — 7383w
+[2026-09-17 02:19:18]     · Memory Segmentation and Address Space Layout R (996w)
+[2026-09-17 02:24:31]     · Heap Metadata Inspection and Pointer Analysis (1017w)
+[2026-09-17 02:29:15]     · Memory Allocation Patterns and Runtime Behavio (925w)
+[2026-09-17 02:33:35]     · Cross-Process Memory Mapping and Shared Librar (831w)
+[2026-09-17 02:39:29]     · Heap Corruption Detection and Integrity Checks (1206w)
+[2026-09-17 02:44:22]     · Memory Footprint Analysis and Resource Leaks I (1031w)
+[2026-09-17 02:44:22]   [08] Memory Layout and Heap Analysis — 6061w
+[2026-09-17 02:48:58]     · Persistent File Signature Verification (974w)
+[2026-09-17 02:52:41]     · Mount Point Analysis and Mount Flags Inspectio (780w)
+[2026-09-17 02:56:41]     · Shadow File System Detection and Mitigation (874w)
+[2026-09-17 03:01:15]     · Storage Media Consistency Checks via fsck and  (976w)
+[2026-09-17 03:06:38]     · File Access Pattern Anomalies in Persistent St (1126w)
+[2026-09-17 03:11:26]     · Immutable File System Layer Verification (e.g. (1092w)
+[2026-09-17 03:11:26]   [09] File System and Storage Integrity Checks — 5877w
+[2026-09-17 03:15:40]     · Baseline Network Traffic Pattern Analysis (891w)
+[2026-09-17 03:20:02]     · Anomaly Detection in Resource Consumption Metr (951w)
+[2026-09-17 03:24:37]     · DNS Resolution Behavior and Trust Chain Verifi (995w)
+[2026-09-17 03:29:22]     · Memory and CPU Usage Signature Profiling (1023w)
+[2026-09-17 03:33:05]     · File System Access Patterns and I/O Behavior M (751w)
+[2026-09-17 03:39:44]     · Process Tree Integrity and Inter-Process Commu (1323w)
+[2026-09-17 03:39:44]   [10] Network and Resource Usage Monitoring — 5986w
+[2026-09-17 03:44:25]     · CPU Utilization Baselines and Spike Analysis (921w)
+[2026-09-17 03:48:35]     · Memory Allocation Patterns and Leak Detection (883w)
+[2026-09-17 03:53:37]     · Network Traffic Anomalies and Data Exfiltratio (1066w)
+[2026-09-17 03:59:09]     · File System Access Frequency and Modification  (1174w)
+[2026-09-17 04:03:37]     · Process Tree Integrity and Fork/Exec Behavior  (878w)
+[2026-09-17 04:08:33]     · I/O Operation Latency and Device-Specific Beha (956w)
+[2026-09-17 04:08:33]   [11] Performance Profiling for Anomalous Behavior — 5931w
+[2026-09-17 04:16:01]     · Baseline Posture Scoring Metrics (1285w)
+[2026-09-17 04:19:55]     · Dynamic Behavior Analysis Weighting (793w)
+[2026-09-17 04:24:14]     · System Call Pattern Discrepancy Scoring (900w)
+[2026-09-17 04:30:37]     · Process Tree Anomaly Detection Scoring (1317w)
+[2026-09-17 04:36:51]     · Memory and Resource Footprint Scoring (1260w)
+[2026-09-17 04:45:03]     · Cross-Platform Consistency and Contextual Vali (1629w)
+[2026-09-17 04:45:03]   [12] Scoring Framework for Posture Verdicts — 7226w
+[2026-09-17 04:49:51]     · RASP-Style Runtime Instrumentation Architectur (948w)
+[2026-09-17 04:55:50]     · Zero-Dependency Implementation Framework (1193w)
+[2026-09-17 04:59:59]     · Native Code Embedding and Execution Model (879w)
+[2026-09-17 05:04:23]     · Memory-Mapped Security Context Injection (925w)
+[2026-09-17 05:09:43]     · Cross-Platform Compatibility and Abstraction L (1036w)
+[2026-09-17 05:15:20]     · Dynamic Instrumentation Without External Libra (940w)
+[2026-09-17 05:15:20]   [13] RASP-Style Integration and Zero-Dependency Design — 5961w
+[2026-09-17 05:20:38]     · Quantum-Enhanced Runtime Integrity Verificatio (808w)
+[2026-09-17 05:26:08]     · Neural Network-Based Behavioral Anomaly Detect (903w)
+[2026-09-17 05:31:42]     · Cross-Platform Runtime Signature Fingerprintin (823w)
+[2026-09-17 05:38:14]     · Temporal Consistency Analysis in Mobile Enviro (1004w)
+[2026-09-17 05:53:38]     · Federated Learning for Distributed Root Detect (1120w)
+[2026-09-17 05:57:11]     · Hardware-Assisted Runtime Integrity Monitoring (747w)
+[2026-09-17 05:57:11]   [14] Frontier Approaches and Future Directions — 5447w
+[2026-09-17 05:57:13] ASSEMBLED -> C:\Users\user\cognis-enhance\rootsentry\docs\corpus\rootsentry-engineering-compendium-reference\rootsentry-engineering-compendium-reference.md (170,940 words, 28 sections)
+[2026-09-17 05:57:13] === complete · 170,940 words -> C:\Users\user\cognis-enhance\rootsentry\docs\corpus\rootsentry-engineering-compendium-reference\rootsentry-engineering-compendium-reference.md ===

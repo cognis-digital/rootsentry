@@ -22,3 +22,8 @@
 [2026-08-20 14:53:35]   +polyglot/csharp/emulator_avd_spoof_detector.cs  (loc now ~9411)
 [2026-08-20 14:55:31]   +polyglot/python/hook_injection_scanner.py  (loc now ~9857)
 [2026-08-20 14:58:42]   +polyglot/go/hook_injection_scanner.go  (loc now ~10550)
+[2026-08-20 14:58:48] === done · rootsentry · loc=10550 · {'committed': True, 'pushed': True, 'push_err': ''} ===
+[2026-09-16 22:31:08] === enhance · rootsentry · words=120000 loc>=10000 langs=9 push=True ===
+[2026-09-16 22:31:13] phase DOCS — longform 120000-word corpus -> docs/corpus/
+[2026-09-17 05:57:13] phase POLYGLOT — expanding to >= 10000 LOC across 9 languages
+[2026-09-17 06:25:58]   facets: ['core', 'parser', 'validate', 'transform', 'report', 'cli']
